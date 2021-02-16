@@ -4,4 +4,4 @@ kubectl apply -f deployment.yaml
 kubectl port-forward svc/demo 8080:8080
 
 
-I have no knowledge of MongoDB so I developed this application using H2 embedded database as a stoge
+I have no knowledge of MongoDB so I developed this application using H2 embedded database as a storage
