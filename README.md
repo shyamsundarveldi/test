@@ -1,6 +1,7 @@
-1) Please run the following commands to generate Kubernetes artifacts such as pod, service, deployment & replicaset and to connect to the application, which will be exposed as a Service in Kubernetes
+1) Please run the following commands to generate Kubernetes artifacts such as pod, service, deployment & replicaset and to connect to the application, which will be exposed as a Service in Kubernetes. deployment.yaml file is located at project root folder
 
 kubectl apply -f deployment.yaml 
+
 kubectl port-forward svc/demo 8080:8080
 
 
