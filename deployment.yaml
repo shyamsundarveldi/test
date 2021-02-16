@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hsbctest
+  name: hsbctest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hsbctest
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: hsbctest
+    spec:
+      containers:
+      - image: veldishy/hsbctest
+        name: hsbctest
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: hsbctest
+  name: hsbctest
+spec:
+  ports:
+  - name: 8080-8080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: hsbctest
+  type: ClusterIP
+status:
+  loadBalancer: {}
