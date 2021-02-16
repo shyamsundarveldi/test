@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
 public class AccountController {
 
     @Autowired
@@ -44,5 +45,10 @@ public class AccountController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteAccountByCustomerIdAndAccountId(@PathVariable Long customerId, @PathVariable Long accountId) {
         customerService.deleteAccountByCustomerIdAndAccountId(customerId, accountId);
+    }
+
+    @GetMapping("/accounts/{id}/balance")
+    Long getAccountBalanceById(@PathVariable Long id) {
+        return accountService.getBalanceByAccountId(id);
     }
 }
